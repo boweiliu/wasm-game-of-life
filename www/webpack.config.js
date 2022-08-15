@@ -14,6 +14,9 @@ module.exports = {
     allowedHosts: ['all'],
     // client: { webSocketURL: 'auto://0.0.0.0:0/ws' },
   },
+  experiments: {
+    asyncWebAssembly: true,
+  },
   plugins: [
     // new CopyWebpackPlugin(['index.html'])
     new HtmlWebpackPlugin({ template: 'index.html' }),
