@@ -19,6 +19,9 @@ module.exports = {
   },
   plugins: [
     // new CopyWebpackPlugin(['index.html'])
-    new HtmlWebpackPlugin({ template: 'index.html' }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      inject: false,
+    }),
   ],
 };

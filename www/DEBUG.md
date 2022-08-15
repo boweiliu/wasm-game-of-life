@@ -10,6 +10,10 @@ https://stackoverflow.com/questions/32155154/webpack-config-how-to-just-copy-the
 
 https://webpack.js.org/configuration/experiments/
 
+## prevent double-loading bug
+
+https://stackoverflow.com/questions/37081559/all-my-code-runs-twice-when-compiled-by-webpack
+
 ## for ngrok - need to disable host header checking
 
 https://webpack.js.org/configuration/dev-server/
