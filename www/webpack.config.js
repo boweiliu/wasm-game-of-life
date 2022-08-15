@@ -10,11 +10,9 @@ module.exports = {
   mode: "development",
   devServer: {
     disableHostCheck: true,
-    client: {
-      webSocketURL: 'auto://0.0.0.0:0/ws'
-    },
+    // client: { webSocketURL: 'auto://0.0.0.0:0/ws' },
   },
   plugins: [
-    new CopyWebpackPlugin(['index.html'])
+    // new CopyWebpackPlugin(['index.html'])
   ],
 };
