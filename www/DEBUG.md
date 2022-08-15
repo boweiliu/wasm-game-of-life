@@ -1,13 +1,16 @@
 # webpack config issues
 
-needed to upgrade to webpack 5. and swap copy webpack plugin for html webpack plugin
+## needed to upgrade to webpack 5. and swap copy webpack plugin for html webpack plugin
 
 https://webpack.js.org/configuration/experiments/
 
 https://stackoverflow.com/questions/32155154/webpack-config-how-to-just-copy-the-index-html-to-the-dist-folder
 
+## reenable wasm
 
-for ngrok - need to disable host header checking
+https://webpack.js.org/configuration/experiments/
+
+## for ngrok - need to disable host header checking
 
 https://webpack.js.org/configuration/dev-server/
 
