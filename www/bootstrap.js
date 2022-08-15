@@ -2,9 +2,6 @@
 // asynchronously. This `bootstrap.js` file does the single async import, so
 // that no one else needs to worry about it again.
 import("./index.js")
-  .then(() => console.log('bootstrapjs finished import.'))
+  .then(() => console.log('finished import from bootstrapjs'))
   .catch(e => console.error("Error importing `index.js`:", e));
 
-var x = 3;
-console.log('bootstrap.js was here' + x)
-x+= 1;

@@ -14,6 +14,20 @@ extern {
 }
 
 #[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = console)]
+    fn log(s: &str);
+
+    #[wasm_bindgen(js_namespace = console, js_name = log)]
+    fn log_u32(a: u32);
+}
+
+#[wasm_bindgen]
 pub fn greet(s: &str) {
     alert(&format!("Hello s {s}, this is wasm-game-of-life 222!"));
+}
+
+#[wasm_bindgen]
+pub fn info(s: &str) {
+    log(&format!("{s}: from rust !!! hot reload? 5 ?"));
 }

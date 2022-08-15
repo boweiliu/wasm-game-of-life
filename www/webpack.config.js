@@ -17,6 +17,10 @@ module.exports = {
   experiments: {
     asyncWebAssembly: true,
   },
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 200,    
+  },
   plugins: [
     // new CopyWebpackPlugin(['index.html'])
     new HtmlWebpackPlugin({

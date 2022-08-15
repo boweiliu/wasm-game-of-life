@@ -14,6 +14,10 @@ https://webpack.js.org/configuration/experiments/
 
 https://stackoverflow.com/questions/37081559/all-my-code-runs-twice-when-compiled-by-webpack
 
+## fix stale hot reload
+
+https://github.com/wasm-tool/wasm-pack-plugin/issues/125#issuecomment-1004694898
+
 ## for ngrok - need to disable host header checking
 
 https://webpack.js.org/configuration/dev-server/
