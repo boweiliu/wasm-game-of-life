@@ -29,5 +29,5 @@ pub fn greet(s: &str) {
 
 #[wasm_bindgen]
 pub fn info(s: &str) {
-    log(&format!("{s}: from rust !!! hot reload? 5 ?"));
+    log(&format!("{s}: from rust !!! hot reload? 6 ?"));
 }
