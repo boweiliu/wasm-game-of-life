@@ -1,8 +1,8 @@
 mod utils;
 
 use std::fmt;
-
 use wasm_bindgen::prelude::*;
+use crate::utils::set_panic_hook;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -27,6 +27,7 @@ extern "C" {
 #[wasm_bindgen]
 pub fn greet(s: &str) {
     alert(&format!("Hello s {s}, this is wasm-game-of-life 222!"));
+    set_panic_hook();
 }
 
 #[wasm_bindgen]
