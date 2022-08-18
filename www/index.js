@@ -96,7 +96,7 @@ const drawCells = () => {
 };
 
 let runr = run();
-console.log({runr });
+console.log({ runr });
 drawGrid();
 drawCells();
 requestAnimationFrame(renderLoop);
