@@ -1,6 +1,6 @@
 // import * as wasm from "hello-wasm-pack";
 import * as wasm from "wasm-game-of-life";
-import { Universe, Cell } from "wasm-game-of-life";
+import { run, Universe, Cell } from "wasm-game-of-life";
 import { memory } from "wasm-game-of-life/wasm_game_of_life_bg.wasm";
 
 var x = 3;
@@ -95,6 +95,8 @@ const drawCells = () => {
   ctx.stroke();
 };
 
+let runr = run();
+console.log({runr });
 drawGrid();
 drawCells();
 requestAnimationFrame(renderLoop);
