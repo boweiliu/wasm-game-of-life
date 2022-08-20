@@ -5,6 +5,7 @@ use std::fmt;
 use wasm_bindgen::prelude::*;
 use crate::utils::set_panic_hook;
 use crate::webgl2::starto;
+use crate::webgl2::log;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -15,15 +16,6 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 extern {
     fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
-
-    #[wasm_bindgen(js_namespace = console, js_name = log)]
-    fn log_u32(a: u32);
 }
 
 #[wasm_bindgen]
@@ -161,6 +153,8 @@ impl fmt::Display for Universe {
 // Called by our JS entry point to run the example
 #[wasm_bindgen(start)]
 pub fn run() -> Result<(), JsValue> {
+    log("inside run");
+
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
     let window = web_sys::window().expect("no global `window` exists");
@@ -174,6 +168,7 @@ pub fn run() -> Result<(), JsValue> {
 
     body.append_child(&val)?;
 
+    log("before starto");
     starto()?;
 
     Ok(())
