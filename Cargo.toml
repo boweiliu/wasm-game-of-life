@@ -34,7 +34,20 @@ features = [
   'HtmlElement',
   'Node',
   'Window',
+  'HtmlCanvasElement',
+  'WebGl2RenderingContext',
+  'WebGlBuffer',
+  'WebGlProgram',
+  'WebGlShader',
+  'WebGlVertexArrayObject',
+  'Window',
 ]
+
+[dependencies.js-sys]
+version = "0.3.59"
+features = [
+]
+
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"

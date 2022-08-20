@@ -1,8 +1,10 @@
 mod utils;
+mod webgl2;
 
 use std::fmt;
 use wasm_bindgen::prelude::*;
 use crate::utils::set_panic_hook;
+use crate::webgl2::starto;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -171,6 +173,8 @@ pub fn run() -> Result<(), JsValue> {
     val.set_text_content(Some("Hello from Rust!"));
 
     body.append_child(&val)?;
+
+    starto()?;
 
     Ok(())
 }
