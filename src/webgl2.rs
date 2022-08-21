@@ -1,6 +1,8 @@
+
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 use web_sys::{WebGl2RenderingContext, WebGlProgram, WebGlShader};
+use crate::utils::log;
 
 pub fn starto() -> Result<(), JsValue> {
     let document = web_sys::window().unwrap().document().unwrap();
@@ -141,11 +143,3 @@ pub fn link_program(
 }
 
 
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    pub fn log(s: &str);
-
-    #[wasm_bindgen(js_namespace = console, js_name = log)]
-    pub fn log_u32(a: u32);
-}

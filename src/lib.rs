@@ -5,29 +5,7 @@ use std::fmt;
 use wasm_bindgen::prelude::*;
 use crate::utils::set_panic_hook;
 use crate::webgl2::starto;
-use crate::webgl2::log;
-
-// When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
-// allocator.
-#[cfg(feature = "wee_alloc")]
-#[global_allocator]
-static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
-
-#[wasm_bindgen]
-extern {
-    fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet(s: &str) {
-    alert(&format!("Hello s {s}, this is wasm-game-of-life 222!"));
-    set_panic_hook();
-}
-
-#[wasm_bindgen]
-pub fn info(s: &str) {
-    log(&format!("{s}: from rust !!! hot reload? 6 ?"));
-}
+use crate::utils::log;
 
 #[wasm_bindgen]
 #[repr(u8)]
@@ -154,6 +132,7 @@ impl fmt::Display for Universe {
 #[wasm_bindgen(start)]
 pub fn main() -> Result<(), JsValue> {
     log("inside main");
+    set_panic_hook();
 
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
