@@ -152,8 +152,8 @@ impl fmt::Display for Universe {
 
 // Called by our JS entry point to run the example
 #[wasm_bindgen(start)]
-pub fn run() -> Result<(), JsValue> {
-    log("inside run");
+pub fn main() -> Result<(), JsValue> {
+    log("inside main");
 
     // Use `web_sys`'s global `window` function to get a handle on the global
     // window object.
