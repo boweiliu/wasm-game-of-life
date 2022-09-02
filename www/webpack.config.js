@@ -27,5 +27,10 @@ module.exports = {
       template: 'index.html',
       inject: false,
     }),
+    new HtmlWebpackPlugin({
+      filename: 'life.html',
+      template: 'life.html',
+      inject: false,
+    }),
   ],
 };
