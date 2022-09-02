@@ -3,12 +3,11 @@ import * as wasm from "wasm-game-of-life";
 import { main, Universe, Cell } from "wasm-game-of-life";
 import { memory } from "wasm-game-of-life/wasm_game_of_life_bg.wasm";
 
-let runr = main();
 
-console.log({ runr });
-
-console.log({ runr });
-
+if (window.location.pathname === '/') {
+  let runr = main();
+  console.log({ runr });
+} else if (window.location.pathname === '/life.html') {
 var x = 3;
 wasm.info("hello" + x);
 const CELL_SIZE = 5; // px
@@ -104,3 +103,4 @@ const drawCells = () => {
 drawGrid();
 drawCells();
 requestAnimationFrame(renderLoop);
+}
