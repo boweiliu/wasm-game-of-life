@@ -1,3 +1,7 @@
+/**
+ * Entry point file = lib.rs
+ */
+
 mod utils;
 mod webgl2;
 mod game_of_life;
