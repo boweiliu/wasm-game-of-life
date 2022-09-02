@@ -6,6 +6,13 @@ use crate::utils::log;
 
 pub fn starto() -> Result<(), JsValue> {
     let document = web_sys::window().unwrap().document().unwrap();
+
+    // clean up other html divs
+    let pre1 = document.get_element_by_id("game-of-life-canvas-pre").unwrap();
+    pre1.remove();
+    let pre2 = document.get_element_by_id("game-of-life-canvas").unwrap();
+    pre2.remove();
+
     let canvas = document.get_element_by_id("canvas").unwrap();
     let canvas: web_sys::HtmlCanvasElement = canvas.dyn_into::<web_sys::HtmlCanvasElement>()?;
 
