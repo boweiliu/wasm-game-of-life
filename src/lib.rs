@@ -25,7 +25,8 @@ pub fn main() -> Result<(), JsValue> {
     let body = document.body().expect("document should have a body");
 
     // Manufacture the element we're gonna append
-    let val = document.create_element("p")?;
+    let val = document.create_element("p").unwrap()
+        .dyn_into::<web_sys::HtmlParagraphElement>();
     document.get_element_by_id("p");
     val.set_text_content(Some("Hello from Rust!"));
 

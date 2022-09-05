@@ -37,6 +37,7 @@ features = [
   'Node',
   'Window',
   'HtmlCanvasElement',
+  'HtmlParagraphElement',
   'WebGl2RenderingContext',
   'WebGlBuffer',
   'WebGlProgram',
