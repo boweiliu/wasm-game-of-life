@@ -7,6 +7,7 @@ mod webgl2;
 mod game_of_life;
 
 use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
 use gloo::{events::EventListener};
 use crate::utils::set_panic_hook;
 use crate::webgl2::starto;
@@ -26,14 +27,21 @@ pub fn main() -> Result<(), JsValue> {
 
     // Manufacture the element we're gonna append
     let val = document.create_element("p").unwrap()
-        .dyn_into::<web_sys::HtmlParagraphElement>();
-    document.get_element_by_id("p");
+        .dyn_into::<web_sys::HtmlParagraphElement>()
+        .unwrap();
+    // document.get_element_by_id("p");
     val.set_text_content(Some("Hello from Rust!"));
 
     body.append_child(&val)?;
 
     log("before starto");
     starto()?;
+
+    let on_down = EventListener::new(&val, "mousedown", move |_event| {
+        log("paragraph mouse down");
+        // web_sys::console::log_1(&"Paragrapah mousedown".into());
+    });
+    on_down.forget();
 
     Ok(())
 }
