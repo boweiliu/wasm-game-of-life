@@ -37,11 +37,25 @@ pub fn main() -> Result<(), JsValue> {
     log("before starto");
     starto()?;
 
+    let mut closed_val = 3;
+
     let on_down = EventListener::new(&val, "mousedown", move |_event| {
         log("paragraph mouse down");
+        closed_val = closed_val + 4;
         // web_sys::console::log_1(&"Paragrapah mousedown".into());
+        {
+            let mut owned_string = "closed val is ".to_owned();
+            owned_string.push_str(&closed_val.to_string());
+            log(&owned_string);
+        }
     });
     on_down.forget();
+
+    {
+        let mut owned_string = "closed val is ".to_owned();
+        owned_string.push_str(&closed_val.to_string());
+        log(&owned_string);
+    }
 
     Ok(())
 }
