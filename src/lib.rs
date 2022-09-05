@@ -7,6 +7,7 @@ mod webgl2;
 mod game_of_life;
 
 use wasm_bindgen::prelude::*;
+use gloo::{events::EventListener};
 use crate::utils::set_panic_hook;
 use crate::webgl2::starto;
 use crate::utils::log;
