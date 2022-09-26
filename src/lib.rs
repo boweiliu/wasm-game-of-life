@@ -35,6 +35,8 @@ pub fn main() -> Result<(), JsValue> {
 
     log("before starto");
     starto()?;
+    log("before event");
+    event();
 
     Ok(())
 }
@@ -43,10 +45,11 @@ pub fn event() {
     let window = web_sys::window().expect("no global `window` exists");
     let document = window.document().expect("should have a document on window");
     let p = document.get_element_by_id("p").unwrap().dyn_into::<web_sys::HtmlParagraphElement>().unwrap();
-    let on_click = EventListener::new(&p, "click", move |event| {
+    let on_click = EventListener::new(&p, "click", move |event| { 
         let click_event = event.clone().dyn_into::<web_sys::MouseEvent>().unwrap();
         let mut click_event_str = String::from("");
-        log("got event");
+        click_event_str.push_str(&click_event.type_());
+        log(&format!("got event, {click_event_str}"));
     });
     on_click.forget();
 }
