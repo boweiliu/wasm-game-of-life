@@ -43,6 +43,10 @@ pub fn event() {
     let window = web_sys::window().expect("no global `window` exists");
     let document = window.document().expect("should have a document on window");
     let p = document.get_element_by_id("p").unwrap().dyn_into::<web_sys::HtmlParagraphElement>().unwrap();
-    let on_keydown = EventListener::new(&p, "click", move |event| {
+    let on_click = EventListener::new(&p, "click", move |event| {
+        let click_event = event.clone().dyn_into::<web_sys::MouseEvent>().unwrap();
+        let mut click_event_str = String::from("");
+        log("got event");
     });
+    on_click.forget();
 }
