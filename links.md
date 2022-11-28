@@ -16,3 +16,15 @@ https://github.com/rustwasm/wasm-bindgen/blob/main/examples/wasm-in-wasm/Cargo.t
 
 https://rustwasm.github.io/wasm-bindgen/examples/webgl.html
 
+https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API
+
+https://webgl2fundamentals.org/webgl/lessons/webgl-load-obj.html
+
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API
+
+https://alecchendev.medium.com/on-working-with-rust-webassembly-javascript-and-webgl-f23b7563478e
+
+https://github.com/lykhouzov/rust-wasm-webgl
+
